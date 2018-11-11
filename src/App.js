@@ -1,10 +1,15 @@
 console.log('App.js is runing!');
 
 // JSX - JavaScript XML
+var app = {
+  title: 'Hello React',
+  subtitle: 'This is my subtitle',
+}
+
 var template = (
   <div>
-    <h1>Jakub</h1>
-    <p>This is some info</p>
+    <h1>{app.title}</h1>
+    <p>{app.subtitle}</p>
     <ol>
       <li>Item one</li>
       <li>Item two</li>
@@ -14,11 +19,18 @@ var template = (
 
 // Create a templateTwo var JSX expression
 
+var user = {
+  name: 'Jakub',
+  age: 21,
+  location: 'Poland, Białystok'
+};
+
 var templateTwo = (
   <div>
-    <h1>Jakub Ch</h1>
-    <p>Age: 21</p>
-    <p>Location: Poland, Białstok</p>
+    <h1>{user.name}</h1>
+    <p>Age: {user.age}</p>
+    <p>Location: {user.location}</p>
+    {template}
   </div>
 );
 
