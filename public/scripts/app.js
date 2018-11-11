@@ -1,57 +1,71 @@
-"use strict";
+'use strict';
 
 console.log('App.js is runing!');
 
 // JSX - JavaScript XML
+var app = {
+  title: 'Hello React',
+  subtitle: 'This is my subtitle'
+};
+
 var template = React.createElement(
-  "div",
+  'div',
   null,
   React.createElement(
-    "h1",
+    'h1',
     null,
-    "Jakub"
+    app.title
   ),
   React.createElement(
-    "p",
+    'p',
     null,
-    "This is some info"
+    app.subtitle
   ),
   React.createElement(
-    "ol",
+    'ol',
     null,
     React.createElement(
-      "li",
+      'li',
       null,
-      "Item one"
+      'Item one'
     ),
     React.createElement(
-      "li",
+      'li',
       null,
-      "Item two"
+      'Item two'
     )
   )
 );
 
 // Create a templateTwo var JSX expression
 
+var user = {
+  name: 'Jakub',
+  age: 21,
+  location: 'Poland, Białystok'
+};
+
 var templateTwo = React.createElement(
-  "div",
+  'div',
   null,
   React.createElement(
-    "h1",
+    'h1',
     null,
-    "Jakub Ch"
+    user.name
   ),
   React.createElement(
-    "p",
+    'p',
     null,
-    "Age: 21"
+    'Age: ',
+    user.age
   ),
   React.createElement(
-    "p",
+    'p',
     null,
-    "Location: Poland, Bia\u0142stok"
-  )
+    'Location: ',
+    user.location
+  ),
+  template
 );
 
 var appRoot = document.getElementById("app");
