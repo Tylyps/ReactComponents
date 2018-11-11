@@ -1,83 +1,28 @@
 'use strict';
 
-console.log('App.js is runing!');
-
-// JSX - JavaScript XML
-var app = {
-  title: 'Hello React',
-  subtitle: 'This is my subtitle',
-  options: ['One', 'Two']
+var square = function square(x) {
+  return x * x;
 };
 
-var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    app.title
-  ),
-  app.subtitle && React.createElement(
-    'p',
-    null,
-    app.subtitle
-  ),
-  React.createElement(
-    'p',
-    null,
-    app.options && app.options.length > 0 ? 'Here are your options' : 'No options'
-  ),
-  app.options && app.options.length > 0 && React.createElement(
-    'ol',
-    null,
-    app.options.map(function (option) {
-      return React.createElement(
-        'li',
-        { key: option },
-        option
-      );
-    })
-  )
-);
+// const squareArrow = (x) => {
+//   return x * x
+// };
 
-// Create a templateTwo var JSX expression
-
-var user = {
-  name: 'Jakub',
-  age: 21,
-  location: 'Poland, Białystok'
+var squareArrow = function squareArrow(x) {
+  return x * x;
 };
 
-function getLocation(location) {
-  if (location) {
-    return React.createElement(
-      'p',
-      null,
-      'Location: ',
-      location
-    );
-  }
-  return undefined;
-}
+var x = 4;
+console.log(square(x), squareArrow(x));
 
-var templateTwo = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    user.name ? user.name : 'Anonymous'
-  ),
-  user.age && user.age >= 18 && React.createElement(
-    'p',
-    null,
-    'Age: ',
-    user.age
-  ),
-  getLocation(user.location),
-  template
-);
+var fullName = 'Jakub Chmielewski';
 
-var appRoot = document.getElementById("app");
+var getFirstNameRegular = function getFirstNameRegular(fullName) {
+  return fullName.split(' ')[0];
+};
 
-ReactDOM.render(templateTwo, appRoot);
+var getFirstName = function getFirstName(fullName) {
+  return fullName.split(' ')[0];
+};
+
+console.log(getFirstName(fullName), getFirstNameRegular(fullName));
