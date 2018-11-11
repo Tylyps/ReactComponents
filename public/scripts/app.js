@@ -1,28 +1,48 @@
 'use strict';
 
-var square = function square(x) {
-  return x * x;
+// arguments object - no longer bound with arrow functions
+
+var add = function add(a, b) {
+  // console.log(arguments)
+  return a + b;
 };
 
-// const squareArrow = (x) => {
-//   return x * x
-// };
+console.log(add(55, 5, 1001));
 
-var squareArrow = function squareArrow(x) {
-  return x * x;
+// this keyword - no longer bound
+
+var user = {
+  name: 'Jakub',
+  cities: ['Białystok', 'Ełk', 'Poznań'],
+  printPlacesLived: function printPlacesLived() {
+    var _this = this;
+
+    console.log(this.name);
+    console.log(this.cities);
+    return this.cities.map(function (city) {
+      return _this.name + ' has lived in ' + city;
+    });
+
+    // this.cities.forEach((city) => {
+    //   console.log(this.name + ' has lived in ' + city)
+    // });
+  }
 };
 
-var x = 4;
-console.log(square(x), squareArrow(x));
+console.log(user.printPlacesLived());
 
-var fullName = 'Jakub Chmielewski';
+//challenge area
 
-var getFirstNameRegular = function getFirstNameRegular(fullName) {
-  return fullName.split(' ')[0];
+var multiplier = {
+  numbers: [1, 2, 3, 4, 5, 6],
+  multiplyBy: 2,
+  multiply: function multiply() {
+    var _this2 = this;
+
+    return this.numbers.map(function (number) {
+      return number * _this2.multiplyBy;
+    });
+  }
 };
 
-var getFirstName = function getFirstName(fullName) {
-  return fullName.split(' ')[0];
-};
-
-console.log(getFirstName(fullName), getFirstNameRegular(fullName));
+console.log(multiplier.multiply());
