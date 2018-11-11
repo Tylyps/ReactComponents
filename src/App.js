@@ -1,13 +1,13 @@
 console.log('App.js is runing!');
 
 // JSX - JavaScript XML
-var app = {
+const app = {
   title: 'Hello React',
   subtitle: 'This is my subtitle',
   options: ['One', 'Two']
 }
 
-var template = (
+const template = (
   <div>
     <h1>{app.title}</h1>
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -21,7 +21,7 @@ var template = (
 
 // Create a templateTwo var JSX expression
 
-var user = {
+const user = {
   name: 'Jakub',
   age: 21,
   location: 'Poland, Białystok'
@@ -34,7 +34,7 @@ function getLocation(location) {
   return undefined;
 }
 
-var templateTwo = (
+const templateTwo = (
   <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
     {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
@@ -43,6 +43,6 @@ var templateTwo = (
   </div>
 );
 
-var appRoot = document.getElementById("app");
+const appRoot = document.getElementById("app");
 
 ReactDOM.render(templateTwo, appRoot);
