@@ -15,7 +15,7 @@ var onFormSubmit = function onFormSubmit(e) {
 
   var option = e.target.elements.option.value;
 
-  if (option) {
+  if (option && !app.options.includes(option)) {
     app.options.push(option);
     e.target.elements.option.value = '';
     render();
