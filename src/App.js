@@ -13,7 +13,7 @@ const onFormSubmit = (e) => {
 
   const option = e.target.elements.option.value;
 
-  if (option) {
+  if (option && !app.options.includes(option)) {
     app.options.push(option);
     e.target.elements.option.value = '';
     render();
